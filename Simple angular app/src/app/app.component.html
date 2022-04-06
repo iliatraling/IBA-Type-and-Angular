@@ -1,0 +1,13 @@
+<label>Введите имя:</label>
+<input [(ngModel)]="name" placeholder="name">
+<h1>Добро пожаловать {{name}}!</h1>
+<button class="button" (click)="doSomething()">Print Hello</button>
+<div class="myFirstDiv">
+    
+    
+    <p><label>Введите число конфет: </label>
+    <input [(ngModel)]="changeNumber" placeholder="candies"></p>
+    <h1> {{candiesMassage}} {{changeNumber}} конфет!</h1>
+    <p class="buttonsPlusMinus"><button class="buttonChange" (click)="addsOne()">+1</button>
+    <button class="buttonChange" (click)="takesAway()">-1</button></p>
+</div>
