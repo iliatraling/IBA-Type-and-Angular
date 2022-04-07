@@ -1,0 +1,10 @@
+<app-todo-item *ngFor="let todo of todos"
+  
+    [todoItem]="todo"
+    (onCheckboxToggle)="onChahgeComplited($event)"
+    (onButtonDelete)="onDeleteComplited($event)"
+> <!-- ngFor цикл todo  -->
+    
+  </app-todo-item>
+  
+  
