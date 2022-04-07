@@ -23,15 +23,16 @@ onChahgeComplited(todo: Todo) {
   console.log(todo);
 }
 onDeleteComplited(todo: Todo) {
+  let index = this.todos.indexOf(todo);
+  console.log(index)
   console.log(todo.id);
-  this.todoService.deleteTodo(todo.id).subscribe(() => this.status = "delete succsesfull");
+  this.todoService.deleteTodo(index).subscribe(() => this.status = "delete succsesfull");
   console.log(this.status);
   if(this.status == "delete succsesfull" ) {
-
-    this.todos.splice(todo.id - 1, 1);// (индекс, сколько удалить, что вставить)
+    this.todos.splice(index, 1);// (индекс, сколько удалить, что вставить)
     this.status ="not";
   }
-  //this.todos.splice(todo.id - 1, 1);// (индекс, сколько удалить, что вставить)
+  //this.todos.splice(index, 1);// (индекс, сколько удалить, что вставить)
   //.subscribe(response => {this.todos = this.todos.filter(item => {item.id !== todo.id});});
  
 }
