@@ -1,6 +1,9 @@
+<app-add-todo></app-add-todo>
+
 <app-todo-item *ngFor="let todo of todos"
-  
     [todoItem]="todo"
+    
+    (onAdd) = "onAddCoplited($event)"
     (onCheckboxToggle)="onChahgeComplited($event)"
     (onButtonDelete)="onDeleteComplited($event)"
 > <!-- ngFor цикл todo  -->

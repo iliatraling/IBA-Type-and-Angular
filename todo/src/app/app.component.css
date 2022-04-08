@@ -7,6 +7,9 @@ body {
     text-align: center;
     
 }
+.head-nav {
+    font-size: 20px;
+} 
 .ref {
     text-decoration: none;
     color: white;

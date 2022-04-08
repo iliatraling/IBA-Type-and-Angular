@@ -31,5 +31,9 @@ deleteTodo(id: number) {
   //);
   return this.http.delete(this.todosUrl +'/' + id);
 }
+postTodo(todo: Todo): Observable<Todo> {
+  const body = { title: ''}
+  return this.http.post<Todo>(this.todosUrl + '/' + todo.id, todo);
+}
 
 }

@@ -26,16 +26,24 @@ onDeleteComplited(todo: Todo) {
   let index = this.todos.indexOf(todo);
   console.log(index)
   console.log(todo.id);
-  this.todoService.deleteTodo(index).subscribe(() => this.status = "delete succsesfull");
+  this.todoService.deleteTodo(index).subscribe(() => {
+  this.status = "delete succsesfull";
   console.log(this.status);
   if(this.status == "delete succsesfull" ) {
     this.todos.splice(index, 1);// (индекс, сколько удалить, что вставить)
     this.status ="not";
   }
+}); 
   //this.todos.splice(index, 1);// (индекс, сколько удалить, что вставить)
   //.subscribe(response => {this.todos = this.todos.filter(item => {item.id !== todo.id});});
  
 }
-
-
+onAddCoplited(todo: Todo) {
+  console.log("add comleted")
+  todo.id = this.todos.length;
+  this.todoService.postTodo(todo).subscribe(() => {
+    console.log("Add Succsesful");
+    this.todos.push(todo);
+  });
+}
 }
